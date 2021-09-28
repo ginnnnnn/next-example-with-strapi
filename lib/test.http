@@ -1,0 +1,70 @@
+GET http://localhost:3000/api/products
+
+###
+GET http://localhost:1337/products/1
+
+###
+GET http://localhost:1337/cart-items
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMyNjMyMDUyLCJleHAiOjE2MzUyMjQwNTJ9.8sc7tun8iZv7DaTdU3bvMKf3oHZPqq1JY54h6GHTyjY
+
+###
+//login next
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+  "email":"austin@example.com",
+  "password":"austin"
+}
+###
+//login strapi
+POST http://localhost:1337/auth/local
+Content-Type:application/json
+
+{
+  "identifier":"alice@example.com",
+  "password":"Alice123"
+}
+
+###
+//sign up
+POST http://localhost:1337/auth/local/register
+Content-Type:application/json
+
+{
+  "username":"Austin",
+  "email":"Austin@example.com",
+  "password":"Austin123"
+}
+
+###
+//read cookie
+
+GET http://localhost:3000/api/user
+
+
+###
+GET http://localhost:1337/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMyNjMyMDUyLCJleHAiOjE2MzUyMjQwNTJ9.8sc7tun8iZv7DaTdU3bvMKf3oHZPqq1JY54h6GHTyjY
+
+###
+//cart next
+GET http://localhost:3000/api/cart
+
+###
+
+//get cartItem
+GET http://localhost:1337/cart-items
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMyNjMyMDUyLCJleHAiOjE2MzUyMjQwNTJ9.8sc7tun8iZv7DaTdU3bvMKf3oHZPqq1JY54h6GHTyjY
+
+
+
+###
+POST http://localhost:1337/cart-items
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMyNjMyMDUyLCJleHAiOjE2MzUyMjQwNTJ9.8sc7tun8iZv7DaTdU3bvMKf3oHZPqq1JY54h6GHTyjY
+Content-Type: application/json
+
+{
+  "product":2,
+  "quantity":1
+}
